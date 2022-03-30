@@ -1013,6 +1013,12 @@ namespace Obfuscar
                 return keepPublicApi;
             }
 
+            if (field.Field.IsPrivate)
+            {
+                message = "Private field.";
+                return false;
+            }
+
             message = "HidePrivateApi option in configuration";
             return !hidePrivateApi;
         }
